@@ -1,6 +1,6 @@
 # Keychain
 
-A Swift client for saving, retrieving or removing values from `Keychain`.
+A Swift client for saving, retrieving or removing values from `Keychain`. The `set(value:forKey:)` and `value(forKey:)` methods are built using generics, so any `Codable` data can be stored.
                             
 ```swift
 import Keychain
@@ -33,7 +33,7 @@ do {
 }
 ```
 
-The client comes also with a helper for handling `Public-Key (Asymmetric) Cryptography` for encrypting and decrypting data.
+The client comes with a helper for handling `Public-Key (Asymmetric) Cryptography` for encrypting and decrypting data. The `Cypher` can use different algorithms and different key data lenghts.
 
 ```swift
 do {
