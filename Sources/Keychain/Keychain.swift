@@ -27,10 +27,10 @@ public struct Keychain {
     let data = try JSONEncoder().encode(value)
     
     guard !key.isEmpty else {
-      throw Error.emptyKey
+      throw Error.unsupportedKey
     }
     guard !data.isEmpty else {
-      throw Error.emptyValue
+      throw Error.unsupportedValue
     }
     try? remove(key)
     
@@ -45,7 +45,7 @@ public struct Keychain {
   
   public func value<Value>(forKey key: String) throws -> Value? where Value: Decodable {
     guard !key.isEmpty else {
-      throw Error.emptyKey
+      throw Error.unsupportedKey
     }
     var query = setupQuery(for: key)
     query[kSecReturnData as String] = kCFBooleanTrue
@@ -65,7 +65,7 @@ public struct Keychain {
   
   public func remove(_ key: String) throws {
     guard !key.isEmpty else {
-      throw Error.emptyKey
+      throw Error.unsupportedKey
     }
     let query = setupQuery(for: key)
     let status = SecItemDelete(query as CFDictionary)

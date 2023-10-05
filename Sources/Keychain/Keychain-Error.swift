@@ -7,9 +7,9 @@ import Security
 
 extension Keychain {
   public enum `Error`: Swift.Error {
-    case emptyKey
-    case emptyValue
     case failure(status: OSStatus)
+    case unsupportedKey
+    case unsupportedValue
   }
 }
 
