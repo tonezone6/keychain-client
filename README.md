@@ -1,4 +1,4 @@
-# Keychain
+# Keychain client
 
 A Swift client for saving, retrieving or removing values from `Keychain`. The `set(value:forKey:)` and `value(forKey:)` methods are built using generics, so any `Codable` data can be stored.
                             
