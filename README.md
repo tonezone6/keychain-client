@@ -5,10 +5,8 @@ A Swift client for saving, retrieving or removing values from `Keychain`. The `s
 ```swift
 import Keychain
 
-let keychain = Keychain()
-
 do {
-  // get token...
+  let keychain = Keychain()
   try keychain.set(value: token, forKey: "token")
 } catch {
   // handle error
