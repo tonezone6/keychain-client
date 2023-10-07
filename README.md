@@ -36,7 +36,7 @@ The client comes with a helper for handling `Public-Key (Asymmetric) Cryptograph
 ```swift
 do {
   let text = "Super secret text"
-  let cypher = Keychain.Cypher("com.cypher.mykey")
+  let cypher = Keychain.Cypher("com.keychain.cypher.mykey")
   let encryptedData = try cypher.encrypt(text)
   let decryptedData = try cypher.decrypt(encryptedData)
   let result = String(data: decryptedData, encoding: .utf8)
